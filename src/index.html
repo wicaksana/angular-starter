@@ -18,13 +18,18 @@
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
 
   <%= htmlWebpackPlugin.files.webpackManifest %>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 
 <body>
+  <!-- Enable bootstrap 4 theme -->
+  <script>window.__theme = 'bs4';</script>
 
   <app>
-    Loading...
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
   </app>
 
   <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
