@@ -18,16 +18,8 @@ export function main(): Promise<any> {
     .catch((err) => console.error(err));
 }
 
-function _domReadyHandler() {
-  document.removeEventListener('DOMContentLoaded', _domReadyHandler, false);
-  main();
+export function bootstrapDomReady() {
+  document.addEventListener('DOMContentLoaded', main);
 }
-switch (document.readyState) {
-  case 'loading':
-    document.addEventListener('DOMContentLoaded', _domReadyHandler, false);
-    break;
-  case 'interactive':
-  case 'complete':
-  default:
-    main();
-}
+
+bootstrapDomReady();
